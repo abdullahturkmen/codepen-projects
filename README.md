@@ -6,6 +6,7 @@ Selam hoşgeldin! Burası benim [Codepen](https://codepen.io/abdullahturkmen) ü
 
 - [Monster Swiper](https://abdullahturkmen.github.io/codepen-projects/monster-swiper/)
 - [Positive and Negative Numbers](https://abdullahturkmen.github.io/codepen-projects/positive-negative/)
+- [LinkedIn Redesign](https://abdullahturkmen.github.io/codepen-projects/linkedin-redesign/)
 
 
 

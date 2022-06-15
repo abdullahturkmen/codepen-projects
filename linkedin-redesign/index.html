@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="tr">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>LinkedIn Redesign</title>
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.5.5/css/simple-line-icons.min.css"
+            integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1dNoel3kNr6PYnSiTzVVBCw=="crossorigin="anonymous"
+            referrerpolicy="no-referrer" />
+    </head>
+    <body>
+
+        <header>
+            <nav class="navbar">
+                <div class="logo">
+                    <a href="">
+                        <img src="./assets/img/logo.svg" alt="">
+                    </a>
+                </div>
+                <div class="navbar-list">
+                    <a href="" class="navbar-list-item active">
+                        <i class="icon-home"></i>
+                    </a>
+                    <a href="" class="navbar-list-item">
+                        <i class="icon-people"></i>
+                    </a>
+                    <a href="" class="navbar-list-item">
+                        <i class="icon-bell">
+                            <span class="notification-count bg-red">+99</span>
+                        </i>
+                    </a>
+                    <a href="" class="navbar-list-item">
+                        <i class="icon-bubbles">
+                            <span class="notification-count bg-red">2</span>
+                        </i>
+                    </a>
+                    <a href="" class="navbar-list-item">
+                        <i class="icon-briefcase"></i>
+                    </a>
+                    <a href="" class="navbar-list-item">
+                        <i class="icon-user"></i>
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <div class="search-bar-content">
+                        <input type="text" placeholder="Find people and more
+                            ...">
+                        <i class="icon-magnifier"></i>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <div class="container">
+                <div class="sidebar">
+
+                    <div class="section">
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Dariush Habibpour</div>
+                                        <span class="user-title">Product
+                                            Designer</span>
+                                    </div>
+                                    <i class="icon-arrow-down"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-badge"></i>
+                                    <div class="list-item-title">Tesla, Inc.</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-social-google"></i>
+                                    <div class="list-item-title">Google</div>
+                                    <span class="notification-count bg-red">+99</span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-plus"></i>
+                                    <div class="list-item-title">Add new page</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="section">
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-control-play"></i>
+                                    <div class="list-item-title">Learning</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-organization"></i>
+                                    <div class="list-item-title">Insights</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-user-follow"></i>
+                                    <div class="list-item-title">Find colleagues</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-badge"></i>
+                                    <div class="list-item-title">Bookmarks</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-game-controller"></i>
+                                    <div class="list-item-title">Gaming</div>
+                                    <span class="notification-count bg-blue">New</span>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <i class="icon-settings"></i>
+                                    <div class="list-item-title">Settings</div>
+                                    <span class="notification-count"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="content">
+
+                    <div class="section create-post">
+                        <div class="post-text">
+                            <span class="input" role="textbox" data-placeholder="Write something ..." contenteditable></span>
+                            <i class="icon-note"></i>
+                        </div>
+                        <div class="post-type">
+                            <a href="">
+                                <i class="icon-picture"></i>
+                                <span>Photo</span>
+                            </a>
+                            <a href="">
+                                <i class="icon-camrecorder"></i>
+                                <span>Video</span>
+                            </a>
+                            <a href="">
+                                <i class="icon-event"></i>
+                                <span>Event</span>
+                            </a>
+                            <a href="">
+                                <i class="icon-doc"></i>
+                                <span>Article</span>
+                            </a>
+                        </div>
+                    </div>
+
+
+                    <div class="section post-item">
+                        <div class="post-detail">
+                            <a href="">
+                                <img class="user-avatar"
+                                    src="./assets/img/avatar-1.png" alt="">
+                                <div class="user-detail">
+                                    <div class="user-name">Elon Musk</div>
+                                    <span class="user-title">CEO of SpaceX</span>
+                                </div>
+                               
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                You have to match the convenience of the gasoline car in order for people to buy an electric car." "In order to have clean air in cities, you have to go electric." "You should not show somebody something very cool and then not do it. At Tesla, any prototype that is shown to customers, the production must be better.
+                            </p>
+                            <img src="./assets/img/post-img.png" alt="">
+                        </div>
+                        <div class="post-statu">
+                            <a href="">
+                                <i class="icon-heart">
+                                    <span class="notification-count bg-blue">+99</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-bubble">
+                                    <span class="notification-count bg-blue">8</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-paper-plane"></i>
+                            </a>
+                            <a href="">
+                                <i class="icon-options-vertical"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="section post-item">
+                        <div class="post-detail">
+                            <a href="">
+                                <img class="user-avatar"
+                                    src="./assets/img/avatar-1.png" alt="">
+                                <div class="user-detail">
+                                    <div class="user-name">Sundar Pichai</div>
+                                    <span class="user-title">Chief Executive Officer of Alphabet</span>
+                                </div>
+                               
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                As a leader, It is important to not just see your own success, but focus on the success of others.</p>
+                            <img src="./assets/img/post-img-2.png" alt="">
+                        </div>
+                        <div class="post-statu">
+                            <a href="">
+                                <i class="icon-heart">
+                                    <span class="notification-count bg-blue">+99</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-bubble">
+                                    <span class="notification-count bg-blue">8</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-paper-plane"></i>
+                            </a>
+                            <a href="">
+                                <i class="icon-options-vertical"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="section post-item">
+                        <div class="post-detail">
+                            <a href="">
+                                <img class="user-avatar"
+                                    src="./assets/img/avatar-1.png" alt="">
+                                <div class="user-detail">
+                                    <div class="user-name">Elon Musk</div>
+                                    <span class="user-title">CEO of SpaceX</span>
+                                </div>
+                               
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                You have to match the convenience of the gasoline car in order for people to buy an electric car." "In order to have clean air in cities, you have to go electric." "You should not show somebody something very cool and then not do it. At Tesla, any prototype that is shown to customers, the production must be better.
+                            </p>
+                            <img src="./assets/img/post-img.png" alt="">
+                        </div>
+                        <div class="post-statu">
+                            <a href="">
+                                <i class="icon-heart">
+                                    <span class="notification-count bg-blue">+99</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-bubble">
+                                    <span class="notification-count bg-blue">8</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-paper-plane"></i>
+                            </a>
+                            <a href="">
+                                <i class="icon-options-vertical"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="section post-item">
+                        <div class="post-detail">
+                            <a href="">
+                                <img class="user-avatar"
+                                    src="./assets/img/avatar-1.png" alt="">
+                                <div class="user-detail">
+                                    <div class="user-name">Sundar Pichai</div>
+                                    <span class="user-title">Chief Executive Officer of Alphabet</span>
+                                </div>
+                               
+                            </a>
+                        </div>
+                        <div class="post-content">
+                            <p>
+                                As a leader, It is important to not just see your own success, but focus on the success of others.</p>
+                            <img src="./assets/img/post-img-2.png" alt="">
+                        </div>
+                        <div class="post-statu">
+                            <a href="">
+                                <i class="icon-heart">
+                                    <span class="notification-count bg-blue">+99</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-bubble">
+                                    <span class="notification-count bg-blue">8</span>
+                                </i>
+                            </a>
+                            <a href="">
+                                <i class="icon-paper-plane"></i>
+                            </a>
+                            <a href="">
+                                <i class="icon-options-vertical"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="sidebar">
+
+                    <div class="section">
+                        <div class="section-title">People you may know:</div>
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Steve Jobs</div>
+                                        <span class="user-title">CEO of Apple</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Connect
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Ryan Roslansky</div>
+                                        <span class="user-title">CEO of Linkedin</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Connect
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Dylan Field</div>
+                                        <span class="user-title">CEO of Figma</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Connect
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="section-see-all" href="">See All</a>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Join discussion</div>
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <div class="user-detail">
+                                        <div class="user-name">#CoronaVirus</div>
+                                        <span class="user-title">19,259 post</span>
+                                    </div>
+                                    <div class="people">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <div class="user-detail">
+                                        <div class="user-name">#Economy</div>
+                                        <span class="user-title">26,254 post</span>
+                                    </div>
+                                    <div class="people">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                    </div>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <div class="user-detail">
+                                        <div class="user-name">#CuteDogs</div>
+                                        <span class="user-title">1,987,254 post</span>
+                                    </div>
+                                    <div class="people">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                        <img src="./assets/img/avatar-1.png"
+                                            alt="">
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="section-see-all" href="">See All</a>
+                    </div>
+
+                    <div class="section">
+                        <div class="section-title">Groups you may interest:</div>
+                        <ul class="section-list">
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Vikings</div>
+                                        <span class="user-title">25,004 Members</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Join
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Linkin Park</div>
+                                        <span class="user-title">549,025 Members</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Join
+                                    </button>
+                                </a>
+                            </li>
+                            <li class="list-item">
+                                <a href="">
+                                    <img class="user-avatar"
+                                        src="./assets/img/avatar-1.png" alt="">
+                                    <div class="user-detail">
+                                        <div class="user-name">Peaky Blinders</div>
+                                        <span class="user-title">29,258,504
+                                            Members</span>
+                                    </div>
+                                    <button class="list-item-btn">
+                                        Join
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                        <a class="section-see-all" href="">See All</a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+        <script src="./assets/js/app.js"></script>
+
+    </body>
+</html>

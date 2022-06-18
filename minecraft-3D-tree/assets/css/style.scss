@@ -1,6 +1,7 @@
 $tree-width: 40px;
 $cloud-width: 40px;
 $earth-width: 240px;
+$img-url: '..';
 
 * {
     margin: 0;
@@ -45,7 +46,7 @@ body {
 
     .earth {
         width: $earth-width;
-        height: $earth-width;
+        height: $earth-width * 5 / 6;
         position: relative;
         transform-style: preserve-3d;
         animation: earth-rotate 25s linear infinite;
@@ -56,48 +57,50 @@ body {
             height: 100%;
 
             &.top {
-                background-image: url(../img/grass-texture.jpg);
+                background-image: url(#{$img-url}/img/grass-texture.jpg);
                 background-size: cover;
                 transform: rotateX(90deg) translateZ($earth-width / 2);
                 background-color: #80c35c;
+                height: $earth-width;
             }
 
             &.front {
-                background-image: url(../img/earth-texture.jpg);
+                background-image: url(#{$img-url}/img/earth-texture.jpg);
                 background-size: cover;
                 transform: translateZ($earth-width / 2);
                 background-color: #79553b;
+                border-left: 1px solid #6e4b32;
             }
 
             &.back {
-                background-image: url(../img/earth-texture.jpg);
+                background-image: url(#{$img-url}/img/earth-texture.jpg);
                 background-size: cover;
                 transform: translateZ(-$earth-width / 2);
                 background-color: #79553b;
+                border-left: 1px solid #6e4b32;
             }
 
             &.left {
-                background-image: url(../img/earth-texture.jpg);
+                background-image: url(#{$img-url}/img/earth-texture.jpg);
                 background-size: cover;
                 transform: rotateY(90deg) translateZ($earth-width / 2);
                 background-color: #79553b;
                 border-left: 1px solid #6e4b32;
-                border-right: 1px solid #6e4b32;
             }
 
             &.right {
-                background-image: url(../img/earth-texture.jpg);
+                background-image: url(#{$img-url}/img/earth-texture.jpg);
                 background-size: cover;
                 transform: rotateY(-90deg) translateZ($earth-width / 2);
                 background-color: #79553b;
                 border-left: 1px solid #6e4b32;
-                border-right: 1px solid #6e4b32;
             }
 
             &.bottom {
                 background-color: #593f28;
-                transform: rotateX(-90deg) translateZ($earth-width / 2);
+                transform: rotateX(-90deg) translateZ($earth-width / 3);
                 box-shadow: 0 0 70px 30px #fff;
+                height: $earth-width;
             }
         }
 

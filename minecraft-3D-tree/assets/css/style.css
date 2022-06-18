@@ -40,7 +40,7 @@ body::before {
 }
 .container .earth {
   width: 240px;
-  height: 240px;
+  height: 200px;
   position: relative;
   transform-style: preserve-3d;
   -webkit-animation: earth-rotate 25s linear infinite;
@@ -56,18 +56,21 @@ body::before {
   background-size: cover;
   transform: rotateX(90deg) translateZ(120px);
   background-color: #80c35c;
+  height: 240px;
 }
 .container .earth > .side.front {
   background-image: url(../img/earth-texture.jpg);
   background-size: cover;
   transform: translateZ(120px);
   background-color: #79553b;
+  border-left: 1px solid #6e4b32;
 }
 .container .earth > .side.back {
   background-image: url(../img/earth-texture.jpg);
   background-size: cover;
   transform: translateZ(-120px);
   background-color: #79553b;
+  border-left: 1px solid #6e4b32;
 }
 .container .earth > .side.left {
   background-image: url(../img/earth-texture.jpg);
@@ -75,7 +78,6 @@ body::before {
   transform: rotateY(90deg) translateZ(120px);
   background-color: #79553b;
   border-left: 1px solid #6e4b32;
-  border-right: 1px solid #6e4b32;
 }
 .container .earth > .side.right {
   background-image: url(../img/earth-texture.jpg);
@@ -83,12 +85,12 @@ body::before {
   transform: rotateY(-90deg) translateZ(120px);
   background-color: #79553b;
   border-left: 1px solid #6e4b32;
-  border-right: 1px solid #6e4b32;
 }
 .container .earth > .side.bottom {
   background-color: #593f28;
-  transform: rotateX(-90deg) translateZ(120px);
+  transform: rotateX(-90deg) translateZ(80px);
   box-shadow: 0 0 70px 30px #fff;
+  height: 240px;
 }
 .container .earth .clouds {
   width: 40px;

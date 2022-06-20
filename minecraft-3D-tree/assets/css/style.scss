@@ -1,7 +1,6 @@
 $tree-width: 40px;
 $cloud-width: 40px;
 $earth-width: 240px;
-$img-url: '..';
 
 * {
     margin: 0;
@@ -57,51 +56,78 @@ body {
             height: 100%;
 
             &.top {
-                background-image: url(#{$img-url}/img/grass-texture.jpg);
-                background-size: cover;
                 transform: rotateX(90deg) translateZ($earth-width / 2);
                 background-color: #80c35c;
                 height: $earth-width;
+              
+               &:before{
+                content: '';
+                position: absolute;
+                width: $earth-width/6;
+                height: $earth-width/6;
+                background: #5b9b3a;
+                box-shadow: $earth-width/6 0 0 0 #80c35c, $earth-width/3 0 0 0 #5b9b3a,$earth-width/2 0 0 0 #80c35c,$earth-width*2/3 0 0 0 #6cb744,$earth-width*5/6 0 0 0 #35ee24,
+                    0 $earth-width/6 0 0 transparent,$earth-width/6 $earth-width/6 0 0 green, $earth-width/3 $earth-width/6 0 0 transparent,$earth-width/2 $earth-width/6 0 0 green,$earth-width*2/3 $earth-width/6 0 0 transparent,$earth-width*5/6 $earth-width/6 0 0 green,
+                    0 $earth-width/3 0 0 darkgreen,$earth-width/6 $earth-width/3 0 0 #398113, $earth-width/3 $earth-width/3 0 0 #35ee24,$earth-width/2 $earth-width/3 0 0 transparent,$earth-width*2/3 $earth-width/3 0 0 #398113,$earth-width*5/6 $earth-width/3 0 0 darkgreen,
+                    0 $earth-width/2 0 0 darkolivegreen,$earth-width/6 $earth-width/2 0 0 transparent, $earth-width/3 $earth-width/2 0 0 darkolivegreen,$earth-width/2 $earth-width/2 0 0 transparent,$earth-width*2/3 $earth-width/2 0 0 transparent,$earth-width*5/6 $earth-width/2 0 0 green,
+                    0 $earth-width*2/3 0 0 #35ee24,$earth-width/6 $earth-width*2/3 0 0 #398113, $earth-width/3 $earth-width*2/3 0 0 darkgreen,$earth-width/2 $earth-width*2/3 0 0 transparent,$earth-width*2/3 $earth-width*2/3 0 0 #398113,$earth-width*5/6 $earth-width*2/3 0 0 #398113,
+                    0 $earth-width*5/6 0 0 green,$earth-width/6 $earth-width*5/6 0 0 #80c35c, $earth-width/3 $earth-width*5/6 0 0 darkolivegreen,$earth-width/2 $earth-width*5/6 0 0 transparent,$earth-width*2/3 $earth-width*5/6 0 0 darkolivegreen,$earth-width*5/6 $earth-width*5/6 0 0 #35ee24;
+              }
+             
             }
 
             &.front {
-                background-image: url(#{$img-url}/img/earth-texture.jpg);
-                background-size: cover;
                 transform: translateZ($earth-width / 2);
                 background-color: #79553b;
-                border-left: 1px solid #6e4b32;
+                //border-left: 1px solid #6e4b32;
             }
 
             &.back {
-                background-image: url(#{$img-url}/img/earth-texture.jpg);
-                background-size: cover;
                 transform: translateZ(-$earth-width / 2);
                 background-color: #79553b;
-                border-left: 1px solid #6e4b32;
+                //border-left: 1px solid #6e4b32;
             }
 
             &.left {
-                background-image: url(#{$img-url}/img/earth-texture.jpg);
-                background-size: cover;
                 transform: rotateY(90deg) translateZ($earth-width / 2);
                 background-color: #79553b;
-                border-left: 1px solid #6e4b32;
+                //border-left: 1px solid #6e4b32;
             }
 
             &.right {
-                background-image: url(#{$img-url}/img/earth-texture.jpg);
-                background-size: cover;
                 transform: rotateY(-90deg) translateZ($earth-width / 2);
                 background-color: #79553b;
-                border-left: 1px solid #6e4b32;
+                //border-left: 1px solid #6e4b32;
             }
 
             &.bottom {
-                background-color: #593f28;
+                background-color: #c9fffe;
                 transform: rotateX(-90deg) translateZ($earth-width / 3);
                 box-shadow: 0 0 70px 30px #fff;
                 height: $earth-width;
             }
+          
+          &.texture{
+            &:before{
+                content: '';
+                position: absolute;
+                width: $earth-width/6;
+                height: $earth-width/6;
+                background: #5b9b3a;
+                box-shadow: $earth-width/6 0 0 0 darkolivegreen, $earth-width/3 0 0 0 #80c35c,$earth-width/2 0 0 0 #5b9b3a,$earth-width*2/3 0 0 0 #6cb744,$earth-width*5/6 0 0 0 #80c35c,
+                  0 $earth-width/6 0 0 #593f28,$earth-width/6 $earth-width/6 0 0 transparent, $earth-width/3 $earth-width/6 0 0 #593f28,$earth-width/2 $earth-width/6 0 0 #b7865d,$earth-width*2/3 $earth-width/6 0 0 transparent,$earth-width*5/6 $earth-width/6 0 0 #b7865d,
+                  0 $earth-width/3 0 0 #b7865d,$earth-width/6 $earth-width/3 0 0 #593f28, $earth-width/3 $earth-width/3 0 0 #593f28,$earth-width/2 $earth-width/3 0 0 transparent,$earth-width*2/3 $earth-width/3 0 0 #593f28,$earth-width*5/6 $earth-width/3 0 0 transparent;
+              }
+              &:after{
+                content: '';
+                position: absolute;
+                width: $earth-width;
+                height: $earth-width/3;
+                background: #c9fffe;
+                bottom: 0;
+                box-shadow: inset 0 0 50px 15px #fff, 0 2px 10px 5px #fff;
+              }
+          }
         }
 
         .clouds {

@@ -173,6 +173,32 @@ document.body.onkeyup = function (e) {
     }
 }
 
+blocksContainer.addEventListener("touchstart", () => {
+    let newBlockWidth;
+    let lastBlockInArray = blocksList.slice(-1)[0];
+    if (movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) < lastBlockInArray['block-left'] || movingBlockElement.offsetLeft > lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
+        console.log("kaybettin")
+        // game over çıkar
+    } else { // resetle
+        var newBlockLeft;
+
+        if (movingBlockElement.offsetLeft > lastBlockInArray['block-left'] && movingBlockElement.offsetLeft < lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
+            newBlockWidth = (lastBlockInArray['block-left'] + lastBlockInArray['block-x']) - movingBlockElement.offsetLeft;
+            newBlockLeft = Math.abs(movingBlockElement.offsetLeft)
+        } else if (movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) > lastBlockInArray['block-left'] && movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) < lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
+            newBlockWidth = (parseInt(movingBlockElement.style.width) + movingBlockElement.offsetLeft) - lastBlockInArray['block-left'];
+            newBlockLeft = lastBlockInArray['block-left'];
+        }
+
+
+        if (newBlockWidth != undefined && newBlockLeft != undefined) {
+            blocksList.push({"block-x": newBlockWidth, "block-y": 200, "block-left": newBlockLeft});
+            // console.table(blocksList)
+            resetValues();
+        }
+    }
+ });
+
 function animate() {
     if (moveLeft) {
         x = i;

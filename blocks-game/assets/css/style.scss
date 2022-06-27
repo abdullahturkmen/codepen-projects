@@ -1,4 +1,5 @@
-@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css');
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 
 $block-x: 300px;
 $block-y: 300px;
@@ -43,77 +44,87 @@ body {
   align-items: center;
   perspective: 800px;
   perspective-origin: top right;
-}
 
-.blocks {
-  position: relative;
-  width: 200px;
-  height: auto;
-  transform-style: preserve-3d;
-  animation: rotate-blocks 40s linear infinite;
-
-  .block {
-    position: absolute;
-    width: $block-x;
-    height: $block-z;
+  .blocks {
+    position: relative;
+    width: 200px;
+    height: auto;
     transform-style: preserve-3d;
-    transform: rotateY(0deg);
+    animation: rotate-blocks 40s linear infinite;
 
-    .side {
+    .block {
       position: absolute;
-      opacity: 0.9;
-      width: 100%;
+      width: $block-x;
+      height: $block-z;
+      transform-style: preserve-3d;
+      transform: rotateY(0deg);
 
-      &.top {
-        background: rgb(5, 14, 68);
-        background: linear-gradient(45deg, #090c1c 0%, #88eaff 100%);
-        //transform: rotateX(90deg) translateZ($block-y / 2);
-        width: $block-x;
-        height: $block-y;
+      .side {
+        position: absolute;
+        opacity: 0.9;
+        width: 100%;
+
+        &.top {
+          background: rgb(5, 14, 68);
+          background: linear-gradient(45deg, #090c1c 0%, #88eaff 100%);
+          //transform: rotateX(90deg) translateZ($block-y / 2);
+          width: $block-x;
+          height: $block-y;
+        }
+
+        &.front {
+          background: rgb(2, 0, 36);
+          background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+          //transform: translateZ($block-y / 2);
+          height: $block-z;
+        }
+
+        &.back {
+          background: rgb(2, 0, 36);
+          background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
+          //transform: translateZ(-$block-y / 2);
+          height: $block-z;
+        }
+
+        &.left {
+          background: rgb(5, 14, 68);
+          background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
+          //transform: rotateY(90deg) translateZ(-($block-y / 2) + $block-x);
+          height: $block-z;
+          width: $block-y;
+        }
+
+        &.right {
+          background: rgb(5, 14, 68);
+          background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
+          //transform: rotateY(-90deg) translateZ($block-y / 2);
+          height: $block-z;
+          width: $block-y;
+        }
+
+        &.bottom {
+          background-color: #175cdd;
+          //transform: rotateX(-90deg) translateZ((- $block-y / 2) + $block-z);
+          width: $block-x;
+          height: $block-y;
+        }
       }
 
-      &.front {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        //transform: translateZ($block-y / 2);
-        height: $block-z;
+      &-drop {
+        transition: all 1s linear;
       }
-
-      &.back {
-        background: rgb(2, 0, 36);
-        background: linear-gradient(45deg, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 100%);
-        //transform: translateZ(-$block-y / 2);
-        height: $block-z;
-      }
-
-      &.left {
-        background: rgb(5, 14, 68);
-        background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
-        //transform: rotateY(90deg) translateZ(-($block-y / 2) + $block-x);
-        height: $block-z;
-        width: $block-y;
-      }
-
-      &.right {
-        background: rgb(5, 14, 68);
-        background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
-        //transform: rotateY(-90deg) translateZ($block-y / 2);
-        height: $block-z;
-        width: $block-y;
-      }
-
-      &.bottom {
-        background-color: #175cdd;
-        //transform: rotateX(-90deg) translateZ((- $block-y / 2) + $block-z);
-        width: $block-x;
-        height: $block-y;
-      }
-    }
-
-    &-drop {
-      transition: all 1s linear;
     }
   }
+}
+
+.score {
+  position: absolute;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  color: #cdcdcd;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
 }
 
 @keyframes rotate-blocks {

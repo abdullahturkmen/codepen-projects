@@ -1,4 +1,5 @@
 const blocksContainer = document.querySelector('.blocks');
+const score = document.querySelector('.score');
 var blockZ = 50;
 var blockTop = blockZ;
 var movingBlockElement;
@@ -7,10 +8,9 @@ var dropBlockElement;
 let windowWidth = window.innerWidth;
 let halfWindowWidh = windowWidth / 2;
 
-if(halfWindowWidh < 220){
+if (halfWindowWidh < 220) {
     halfWindowWidh = 300;
-}
-else if(halfWindowWidh > 650){
+} else if (halfWindowWidh > 650) {
     halfWindowWidh = 500;
 }
 
@@ -128,7 +128,7 @@ var moveLeft;
 
 const resetValues = () => {
 
-    counter = -halfWindowWidh;
+    counter = - halfWindowWidh;
     increase = Math.PI / 1;
     i = 0;
     moveLeft = true;
@@ -144,36 +144,16 @@ resetValues();
 
 document.body.onkeyup = function (e) {
     if (e.key == " " || e.code == "Space" || e.keyCode == 32) {
-
-        let newBlockWidth;
-        let lastBlockInArray = blocksList.slice(-1)[0];
-        if (movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) < lastBlockInArray['block-left'] || movingBlockElement.offsetLeft > lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
-            console.log("kaybettin")
-            // game over çıkar
-        } else { // resetle
-            var newBlockLeft;
-
-            if (movingBlockElement.offsetLeft > lastBlockInArray['block-left'] && movingBlockElement.offsetLeft < lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
-                newBlockWidth = (lastBlockInArray['block-left'] + lastBlockInArray['block-x']) - movingBlockElement.offsetLeft;
-                newBlockLeft = Math.abs(movingBlockElement.offsetLeft)
-            } else if (movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) > lastBlockInArray['block-left'] && movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) < lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
-                newBlockWidth = (parseInt(movingBlockElement.style.width) + movingBlockElement.offsetLeft) - lastBlockInArray['block-left'];
-                newBlockLeft = lastBlockInArray['block-left'];
-            }
-
-
-            if (newBlockWidth != undefined && newBlockLeft != undefined) {
-                blocksList.push({"block-x": newBlockWidth, "block-y": 200, "block-left": newBlockLeft});
-                // console.table(blocksList)
-                resetValues();
-            }
-        }
-
-
+        clickEvent();
     }
 }
 
 blocksContainer.addEventListener("touchstart", () => {
+    clickEvent();
+});
+
+
+const clickEvent = () => {
     let newBlockWidth;
     let lastBlockInArray = blocksList.slice(-1)[0];
     if (movingBlockElement.offsetLeft + parseInt(movingBlockElement.style.width) < lastBlockInArray['block-left'] || movingBlockElement.offsetLeft > lastBlockInArray['block-left'] + lastBlockInArray['block-x']) {
@@ -192,12 +172,15 @@ blocksContainer.addEventListener("touchstart", () => {
 
 
         if (newBlockWidth != undefined && newBlockLeft != undefined) {
+            let nums = (Math.floor(score.innerText) + Math.floor(newBlockWidth / lastBlockInArray['block-x'] * 10))
+            score.innerText = nums
             blocksList.push({"block-x": newBlockWidth, "block-y": 200, "block-left": newBlockLeft});
             // console.table(blocksList)
             resetValues();
         }
     }
- });
+
+}
 
 function animate() {
     if (moveLeft) {
@@ -219,7 +202,7 @@ function animate() {
         movingBlockElement.style.left = counter + "px";
         // console.log(counter)
 
-        if (counter <= -halfWindowWidh) {
+        if (counter <= - halfWindowWidh) {
             moveLeft = true;
         }
     }

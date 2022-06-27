@@ -1,4 +1,5 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -38,8 +39,7 @@ body::before {
   perspective: 800px;
   perspective-origin: top right;
 }
-
-.blocks {
+.container .blocks {
   position: relative;
   width: 200px;
   height: auto;
@@ -47,53 +47,63 @@ body::before {
   -webkit-animation: rotate-blocks 40s linear infinite;
           animation: rotate-blocks 40s linear infinite;
 }
-.blocks .block {
+.container .blocks .block {
   position: absolute;
   width: 300px;
   height: 50px;
   transform-style: preserve-3d;
   transform: rotateY(0deg);
 }
-.blocks .block .side {
+.container .blocks .block .side {
   position: absolute;
   opacity: 0.9;
   width: 100%;
 }
-.blocks .block .side.top {
+.container .blocks .block .side.top {
   background: rgb(5, 14, 68);
   background: linear-gradient(45deg, #090c1c 0%, #88eaff 100%);
   width: 300px;
   height: 300px;
 }
-.blocks .block .side.front {
+.container .blocks .block .side.front {
   background: rgb(2, 0, 36);
   background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(0, 212, 255) 100%);
   height: 50px;
 }
-.blocks .block .side.back {
+.container .blocks .block .side.back {
   background: rgb(2, 0, 36);
   background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(0, 212, 255) 100%);
   height: 50px;
 }
-.blocks .block .side.left {
+.container .blocks .block .side.left {
   background: rgb(5, 14, 68);
   background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
   height: 50px;
   width: 300px;
 }
-.blocks .block .side.right {
+.container .blocks .block .side.right {
   background: rgb(5, 14, 68);
   background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
   height: 50px;
   width: 300px;
 }
-.blocks .block .side.bottom {
+.container .blocks .block .side.bottom {
   background-color: #175cdd;
   width: 300px;
   height: 300px;
 }
-.blocks .block-drop {
+.container .blocks .block-drop {
   transition: all 1s linear;
+}
+
+.score {
+  position: absolute;
+  font-size: 2em;
+  font-family: "Roboto", sans-serif;
+  color: #cdcdcd;
+  top: 20px;
+  right: 20px;
+  font-weight: 600;
 }
 
 @-webkit-keyframes rotate-blocks {

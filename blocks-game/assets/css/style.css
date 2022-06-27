@@ -1,3 +1,4 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css");
 * {
   margin: 0;
   padding: 0;
@@ -5,12 +6,26 @@
 }
 
 body {
-  background-color: #eee;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  background: rgb(5, 14, 68);
+  position: relative;
+  background: linear-gradient(45deg, #050e44 0%, #166a7c 50%, #050e44 100%);
+}
+body::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 40%;
+  background: #050e44;
+  bottom: 0;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  box-shadow: 0 -10px 50px 50px #050e44;
+  opacity: 0.75;
 }
 
 .container {
@@ -29,6 +44,8 @@ body {
   width: 200px;
   height: auto;
   transform-style: preserve-3d;
+  -webkit-animation: rotate-blocks 40s linear infinite;
+          animation: rotate-blocks 40s linear infinite;
 }
 .blocks .block {
   position: absolute;
@@ -43,30 +60,74 @@ body {
   width: 100%;
 }
 .blocks .block .side.top {
-  background-color: #00bfa5;
+  background: rgb(5, 14, 68);
+  background: linear-gradient(45deg, #090c1c 0%, #88eaff 100%);
   width: 300px;
   height: 300px;
 }
 .blocks .block .side.front {
-  background-color: #d50000;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(0, 212, 255) 100%);
   height: 50px;
 }
 .blocks .block .side.back {
-  background-color: #aa00ff;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(45deg, rgb(2, 0, 36) 0%, rgb(0, 212, 255) 100%);
   height: 50px;
 }
 .blocks .block .side.left {
-  background-color: #304ffe;
+  background: rgb(5, 14, 68);
+  background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
   height: 50px;
   width: 300px;
 }
 .blocks .block .side.right {
-  background-color: #0091ea;
+  background: rgb(5, 14, 68);
+  background: linear-gradient(45deg, #050c36 0%, #03c7f1 100%);
   height: 50px;
   width: 300px;
 }
 .blocks .block .side.bottom {
-  background-color: #64dd17;
+  background-color: #175cdd;
   width: 300px;
   height: 300px;
+}
+.blocks .block-drop {
+  transition: all 1s linear;
+}
+
+@-webkit-keyframes rotate-blocks {
+  0% {
+    transform: rotateY(-45deg);
+  }
+  48% {
+    transform: rotateY(55deg);
+  }
+  50% {
+    transform: rotateY(145deg);
+  }
+  98% {
+    transform: rotateY(235deg);
+  }
+  100% {
+    transform: rotateY(315deg);
+  }
+}
+
+@keyframes rotate-blocks {
+  0% {
+    transform: rotateY(-45deg);
+  }
+  48% {
+    transform: rotateY(55deg);
+  }
+  50% {
+    transform: rotateY(145deg);
+  }
+  98% {
+    transform: rotateY(235deg);
+  }
+  100% {
+    transform: rotateY(315deg);
+  }
 }/*# sourceMappingURL=style.css.map */

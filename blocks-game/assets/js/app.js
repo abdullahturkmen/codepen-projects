@@ -182,7 +182,7 @@ const clickEvent = () => {
 
 }
 
-function animate() {
+const animate = () => {
     if (moveLeft) {
         x = i;
         i += 0.01;

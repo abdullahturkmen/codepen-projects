@@ -1,0 +1,209 @@
+$chessboard-x: 400px;
+$chessboard-y: 400px;
+$chessboard-z: 20px;
+
+$cube-x: 50px;
+$cube-y: 50px;
+$cube-z: 100px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #242424;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 10000px;
+  perspective-origin: center;
+  animation: perspective 8s cubic-bezier(0.4, 0, 0.1, 1) infinite;
+
+  .cube {
+    width: $cube-x;
+    height: $cube-z;
+    position: absolute;
+    transform-style: preserve-3d;
+    transform: rotate3d(1, 1, 1, 0deg);
+
+    &.odd {
+      .side {
+        &.bottom,
+        &.top {
+          background-color: #fff;
+        }
+        &.front,
+        &.back,
+        &.left,
+        &.right {
+          background: rgb(215, 215, 215);
+          background: linear-gradient(0deg, #d7d7d7 0%, #000 100%);
+        }
+      }
+    }
+    &.even {
+      .side {
+        &.bottom,
+        &.top {
+          background-color: #000;
+        }
+        &.front,
+        &.back,
+        &.left,
+        &.right {
+          background: rgb(215, 215, 215);
+          background: linear-gradient(0deg, #464646 0%, #000 100%);
+        }
+      }
+    }
+
+    & > .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      &.top {
+        transform: rotateX(90deg) translateZ($cube-y / 2);
+        width: $cube-x;
+        height: $cube-y;
+      }
+
+      &.front {
+        transform: translateZ($cube-y / 2);
+        height: $cube-z;
+      }
+
+      &.back {
+        transform: translateZ(-$cube-y / 2);
+        height: $cube-z;
+      }
+
+      &.left {
+        transform: rotateY(90deg) translateZ(-($cube-y / 2) + $cube-x);
+        height: $cube-z;
+        width: $cube-y;
+      }
+
+      &.right {
+        transform: rotateY(-90deg) translateZ($cube-y / 2);
+        height: $cube-z;
+        width: $cube-y;
+      }
+
+      &.bottom {
+        transform: rotateX(-90deg) translateZ((-$cube-y / 2) + $cube-z);
+        width: $cube-x;
+        height: $cube-y;
+      }
+    }
+  }
+
+  .chessboard {
+    width: $chessboard-x;
+    height: $chessboard-z;
+    position: relative;
+    transform-style: preserve-3d;
+    transform: rotate3d(20, 20, 20, 120deg);
+    animation: rotate 8s cubic-bezier(0.4, 0, 0.1, 1) infinite;
+
+    & > .side {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      &.top {
+        transform: rotateX(90deg) translateZ($chessboard-y / 2);
+        background-color: #363636;
+        width: $chessboard-x;
+        height: $chessboard-y;
+      }
+
+      &.front {
+        transform: translateZ($chessboard-y / 2);
+        height: $chessboard-z;
+        background-color: #79553b;
+      }
+
+      &.back {
+        transform: translateZ(-$chessboard-y / 2);
+        height: $chessboard-z;
+        background-color: #79553b;
+      }
+
+      &.left {
+        transform: rotateY(90deg) translateZ(-($chessboard-y / 2) + $chessboard-x);
+        height: $chessboard-z;
+        width: $chessboard-y;
+        background-color: #79553b;
+      }
+
+      &.right {
+        transform: rotateY(-90deg) translateZ($chessboard-y / 2);
+        height: $chessboard-z;
+        width: $chessboard-y;
+        background-color: #79553b;
+      }
+
+      &.bottom {
+        background-color: #363636;
+        transform: rotateX(-90deg) translateZ((-$chessboard-y / 2) + $chessboard-z);
+        width: $chessboard-x;
+        height: $chessboard-y;
+      }
+    }
+  }
+}
+
+@keyframes perspective {
+  0% {
+    perspective: 10000px;
+  }
+  25% {
+    perspective: 200px;
+  }
+  50% {
+    perspective: 10000px;
+  }
+  65% {
+    perspective: 3000px;
+  }
+  100% {
+    perspective: 10000px;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate3d(20, 20, 20, 120deg);
+  }
+  30% {
+    transform: rotate3d(20, 20, 20, 120deg);
+  }
+  55% {
+    transform: rotate3d(16, 10, 30, 150deg);
+  }
+  65% {
+    transform: rotate3d(600, 0, 30, 170deg);
+  }
+  75% {
+    transform: rotate3d(16, 10, 30, 150deg);
+  }
+  100% {
+    transform: rotate3d(20, 20, 20, 120deg);
+  }
+}

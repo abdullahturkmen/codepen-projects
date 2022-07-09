@@ -1,0 +1,514 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background: #aabec0;
+}
+
+.container {
+  width: 600px;
+  height: 600px;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 800px;
+  perspective-origin: top right;
+}
+.container .sheep-body {
+  width: 125px;
+  height: 125px;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotate3d(69, 19, 2, 3deg);
+}
+.container .sheep-body .sheep-head {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: -50%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(170px);
+  -webkit-animation: sheep-head 3s linear infinite;
+          animation: sheep-head 3s linear infinite;
+}
+.container .sheep-body .sheep-head .sheep-face {
+  width: 40px;
+  height: 80px;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(50px);
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 15%;
+  transform: translateX(0) translateZ(10px);
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye:nth-of-type(1) {
+  left: 5%;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye:nth-of-type(2) {
+  right: 5%;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 4px #858585;
+  background-color: #dadada;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.top {
+  transform: rotateX(90deg) translateZ(2.5px);
+  width: 15px;
+  height: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.front {
+  transform: translateZ(2.5px);
+  height: 15px;
+  position: absolute;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.front::before {
+  content: "";
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1;
+  background-color: rgb(0, 0, 0);
+  border-radius: 100%;
+  transform: rotate(90deg);
+  transform-origin: bottom right;
+  -webkit-animation: sheep-eye 3s linear infinite;
+          animation: sheep-eye 3s linear infinite;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.back {
+  transform: translateZ(-2.5px);
+  height: 15px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.left {
+  transform: rotateY(90deg) translateZ(12.5px);
+  height: 15px;
+  width: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.right {
+  transform: rotateY(-90deg) translateZ(2.5px);
+  height: 15px;
+  width: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-eye > .side.bottom {
+  transform: rotateX(-90deg) translateZ(12.5px);
+  width: 15px;
+  height: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue {
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  transform-style: preserve-3d;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(10px);
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #e0b1cb;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.top {
+  transform: rotateX(90deg) translateZ(2.5px);
+  width: 20px;
+  height: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.front {
+  transform: translateZ(2.5px);
+  height: 10px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.back {
+  transform: translateZ(-2.5px);
+  height: 10px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.left {
+  transform: rotateY(90deg) translateZ(17.5px);
+  height: 10px;
+  width: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.right {
+  transform: rotateY(-90deg) translateZ(2.5px);
+  height: 10px;
+  width: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face .sheep-tongue > .side.bottom {
+  transform: rotateX(-90deg) translateZ(7.5px);
+  width: 20px;
+  height: 5px;
+}
+.container .sheep-body .sheep-head .sheep-face > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.top {
+  transform: rotateX(90deg) translateZ(7.5px);
+  background-color: #363636;
+  width: 40px;
+  height: 15px;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.front {
+  transform: translateZ(7.5px);
+  height: 80px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.back {
+  transform: translateZ(-7.5px);
+  height: 80px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.left {
+  transform: rotateY(90deg) translateZ(32.5px);
+  height: 80px;
+  width: 15px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.right {
+  transform: rotateY(-90deg) translateZ(7.5px);
+  height: 80px;
+  width: 15px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-head .sheep-face > .side.bottom {
+  background-color: #363636;
+  transform: rotateX(-90deg) translateZ(72.5px);
+  width: 40px;
+  height: 15px;
+}
+.container .sheep-body .sheep-head > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 50px #858585;
+  background-color: #dadada;
+}
+.container .sheep-body .sheep-head > .side.top {
+  transform: rotateX(90deg) translateZ(40px);
+  width: 80px;
+  height: 80px;
+}
+.container .sheep-body .sheep-head > .side.front {
+  transform: translateZ(40px);
+  height: 80px;
+}
+.container .sheep-body .sheep-head > .side.back {
+  transform: translateZ(-40px);
+  height: 80px;
+}
+.container .sheep-body .sheep-head > .side.left {
+  transform: rotateY(90deg) translateZ(40px);
+  height: 80px;
+  width: 80px;
+}
+.container .sheep-body .sheep-head > .side.right {
+  transform: rotateY(-90deg) translateZ(40px);
+  height: 80px;
+  width: 80px;
+}
+.container .sheep-body .sheep-head > .side.bottom {
+  transform: rotateX(-90deg) translateZ(40px);
+  width: 80px;
+  height: 80px;
+}
+.container .sheep-body .sheep-foot {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 100%;
+}
+.container .sheep-body .sheep-foot .sheep-nail {
+  width: 30px;
+  height: 10px;
+  position: absolute;
+  transform-style: preserve-3d;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateZ(0px);
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.top {
+  transform: rotateX(90deg) translateZ(15px);
+  background-color: #363636;
+  width: 30px;
+  height: 30px;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.front {
+  transform: translateZ(15px);
+  height: 10px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.back {
+  transform: translateZ(-15px);
+  height: 10px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.left {
+  transform: rotateY(90deg) translateZ(15px);
+  height: 10px;
+  width: 30px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.right {
+  transform: rotateY(-90deg) translateZ(15px);
+  height: 10px;
+  width: 30px;
+  background-color: #79553b;
+}
+.container .sheep-body .sheep-foot .sheep-nail > .side.bottom {
+  background-color: #363636;
+  transform: rotateX(-90deg) translateZ(-5px);
+  width: 30px;
+  height: 30px;
+}
+.container .sheep-body .sheep-foot:nth-of-type(2) {
+  left: 10%;
+  transform: translateZ(110px);
+}
+.container .sheep-body .sheep-foot:nth-of-type(3) {
+  right: 10%;
+  transform: translateZ(110px);
+}
+.container .sheep-body .sheep-foot:nth-of-type(4) {
+  left: 10%;
+  transform: translateZ(-110px);
+}
+.container .sheep-body .sheep-foot:nth-of-type(5) {
+  right: 10%;
+  transform: translateZ(-110px);
+}
+.container .sheep-body .sheep-foot > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 20px #858585;
+  background-color: #dadada;
+}
+.container .sheep-body .sheep-foot > .side.top {
+  transform: rotateX(90deg) translateZ(20px);
+  width: 40px;
+  height: 40px;
+}
+.container .sheep-body .sheep-foot > .side.front {
+  transform: translateZ(20px);
+  height: 40px;
+}
+.container .sheep-body .sheep-foot > .side.back {
+  transform: translateZ(-20px);
+  height: 40px;
+}
+.container .sheep-body .sheep-foot > .side.left {
+  transform: rotateY(90deg) translateZ(20px);
+  height: 40px;
+  width: 40px;
+}
+.container .sheep-body .sheep-foot > .side.right {
+  transform: rotateY(-90deg) translateZ(20px);
+  height: 40px;
+  width: 40px;
+}
+.container .sheep-body .sheep-foot > .side.bottom {
+  transform: rotateX(-90deg) translateZ(20px);
+  width: 40px;
+  height: 40px;
+}
+.container .sheep-body > .side {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 50px #858585;
+  background-color: #dadada;
+}
+.container .sheep-body > .side.top {
+  transform: rotateX(90deg) translateZ(140px);
+  width: 125px;
+  height: 280px;
+}
+.container .sheep-body > .side.front {
+  transform: translateZ(140px);
+  height: 125px;
+}
+.container .sheep-body > .side.back {
+  transform: translateZ(-140px);
+  height: 125px;
+}
+.container .sheep-body > .side.left {
+  transform: rotateY(90deg) translateZ(-15px);
+  height: 125px;
+  width: 280px;
+}
+.container .sheep-body > .side.right {
+  transform: rotateY(-90deg) translateZ(140px);
+  height: 125px;
+  width: 280px;
+}
+.container .sheep-body > .side.bottom {
+  transform: rotateX(-90deg) translateZ(-15px);
+  width: 125px;
+  height: 280px;
+}
+
+@-webkit-keyframes sheep-head {
+  0% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  20% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  40% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  45% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  50% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  55% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  60% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  65% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  70% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+}
+
+@keyframes sheep-head {
+  0% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  20% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  40% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  45% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  50% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  55% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  60% {
+    transform: translateX(-50%) translateZ(170px) rotateX(-5deg);
+  }
+  65% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  70% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(170px) rotateX(10deg);
+  }
+}
+@-webkit-keyframes sheep-eye {
+  0% {
+    transform: rotate(90deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  40% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  45% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  50% {
+    transform: rotate(290deg);
+    width: 45%;
+  }
+  55% {
+    transform: rotate(290deg);
+    width: 45%;
+  }
+  60% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  65% {
+    transform: rotate(90deg);
+  }
+  70% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes sheep-eye {
+  0% {
+    transform: rotate(90deg);
+  }
+  20% {
+    transform: rotate(90deg);
+  }
+  40% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  45% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  50% {
+    transform: rotate(290deg);
+    width: 45%;
+  }
+  55% {
+    transform: rotate(290deg);
+    width: 45%;
+  }
+  60% {
+    transform: rotate(290deg);
+    width: 30%;
+  }
+  65% {
+    transform: rotate(90deg);
+  }
+  70% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}/*# sourceMappingURL=style.css.map */

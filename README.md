@@ -12,6 +12,7 @@ Selam hoşgeldin! Burası benim [Codepen](https://codepen.io/abdullahturkmen) ü
 - [PI - Golden Ratio - π](https://abdullahturkmen.github.io/codepen-projects/pi-golden-ratio/)
 - [3D Chess](https://abdullahturkmen.github.io/codepen-projects/3D-chess/)
 - [İyi Bayramlar :)](https://abdullahturkmen.github.io/codepen-projects/iyi-bayramlar/)
+- [Playing Cards](https://abdullahturkmen.github.io/codepen-projects/playing-cards/)
 
 
 

@@ -1,0 +1,483 @@
+$orange-clr: #ff9900;
+$yellow-clr: #e0e000;
+$red-clr: #ff3b00;
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: rgb(19, 24, 17);
+    background: radial-gradient(circle, rgba(19, 24, 17, 1) 50%, rgba(0, 0, 0, 1) 100%);
+}
+
+.pumpkin {
+    width: 300px;
+    height: 260px;
+    background: rgb(243, 114, 6);
+    background: linear-gradient(180deg, rgba(243, 114, 6, 1) 0%, rgba(63, 5, 55, 1) 100%);
+    padding-top: 40px;
+    border-radius: 40px/20%;
+    position: relative;
+    box-shadow: inset 0 8px 10px #a97c2c, inset 0 -8px 10px #2a0034;
+
+    &:before {
+        content: "";
+        width: calc(100% + 80px);
+        height: calc(100% + 80px);
+        //background: rgb(227,63,251);
+        //background: linear-gradient(180deg, rgba(227,63,251,1) 0%, rgba(24,0,29,1) 100%);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 80px;
+    }
+
+    .eyes {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        .eye {
+            border-style: solid;
+            border-width: 40px;
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            position: relative;
+
+            &::before,
+            &::after {
+                content: "";
+                position: absolute;
+                border-style: solid;
+                width: 0px;
+                height: 0px;
+                border-radius: 50%;
+            }
+
+            &::before {
+                border-width: 38px;
+            }
+
+            &::after {
+                border-width: 25px;
+            }
+
+            &-left {
+                border-color: transparent transparent $orange-clr $orange-clr;
+                animation: eye-left 4s linear infinite;
+                transform: rotate(0deg) skewX(0deg);
+
+                &::before {
+                    border-color: transparent transparent #e0e000 $yellow-clr;
+                    left: -40px;
+                    top: -40px;
+                    animation: eye-left-before 4s linear infinite;
+                }
+
+                &::after {
+                    border-color: transparent transparent $red-clr $red-clr;
+                    left: -28px;
+                    top: -24px;
+                    animation: eye-left-after 4s linear infinite;
+                }
+            }
+
+            &-right {
+                border-color: transparent $orange-clr $orange-clr transparent;
+                animation: eye-right 4s linear infinite;
+                transform: rotate(0deg) skewX(0deg);
+
+                &::before {
+                    border-color: transparent $yellow-clr $yellow-clr transparent;
+                    right: -40px;
+                    top: -40px;
+                    animation: eye-right-before 4s linear infinite;
+                }
+
+                &::after {
+                    border-color: transparent $red-clr $red-clr transparent;
+                    right: -28px;
+                    top: -24px;
+                    animation: eye-right-after 4s linear infinite;
+                }
+            }
+        }
+    }
+
+    .nose {
+        border-color: transparent transparent $orange-clr transparent;
+        border-style: solid;
+        border-width: 30px;
+        width: 0px;
+        height: 0px;
+        border-radius: 15%;
+        transform: translate(-50%, -80%) rotateY(60deg);
+        left: 50%;
+        top: 50%;
+        position: absolute;
+    }
+
+    .mouth {
+        width: 80%;
+        height: 25%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            9% 65%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            40.23% 98.6%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            77.43% 89.39%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            83.5% 0%,
+            67% 0%,
+            50% 0%,
+            31.88% 0%,
+            14.75% 0%
+        );
+        background: rgb(221, 103, 0);
+        background: linear-gradient(
+            0deg,
+            rgba(221, 103, 0, 1) 0%,
+            rgba(253, 217, 29, 1) 45%,
+            rgba(252, 209, 26, 1) 55%,
+            rgba(221, 103, 0, 1) 100%
+        );
+        animation: mouth 4s linear infinite;
+        margin: 70px auto 0;
+    }
+}
+
+@keyframes eye-left {
+    0% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+    45% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+    50% {
+        border-radius: 10%;
+        transform: rotate(0deg) skewX(-30deg);
+    }
+    95% {
+        border-radius: 10%;
+        transform: rotate(0deg) skewX(-30deg);
+    }
+    100% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+}
+
+@keyframes eye-left-before {
+    0% {
+        border-width: 38px;
+        left: -40px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent transparent $yellow-clr $yellow-clr;
+    }
+    45% {
+        border-width: 38px;
+        left: -40px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent transparent $yellow-clr $yellow-clr;
+    }
+    50% {
+        border-width: 30px;
+        left: -35px;
+        top: -30px;
+        border-radius: 15%;
+        border-color: transparent transparent $yellow-clr $yellow-clr;
+    }
+    95% {
+        border-width: 30px;
+        left: -35px;
+        top: -30px;
+        border-radius: 15%;
+        border-color: transparent transparent $yellow-clr $yellow-clr;
+    }
+    100% {
+        border-width: 38px;
+        left: -40px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent transparent $yellow-clr $yellow-clr;
+    }
+}
+
+@keyframes eye-left-after {
+    0% {
+        border-color: transparent transparent $red-clr $red-clr;
+    }
+    45% {
+        border-color: transparent transparent $red-clr $red-clr;
+    }
+    50% {
+        border-color: transparent transparent transparent transparent;
+    }
+    95% {
+        border-color: transparent transparent transparent transparent;
+    }
+    100% {
+        border-color: transparent transparent $red-clr $red-clr;
+    }
+}
+
+@keyframes eye-right {
+    0% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+    45% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+    50% {
+        border-radius: 10%;
+        transform: rotate(0deg) skewX(30deg);
+    }
+    95% {
+        border-radius: 10%;
+        transform: rotate(0deg) skewX(30deg);
+    }
+    100% {
+        border-radius: 50%;
+        transform: rotate(0deg) skewX(0deg);
+    }
+}
+
+@keyframes eye-right-before {
+    0% {
+        border-width: 38px;
+        left: -36px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent $yellow-clr $yellow-clr transparent; 
+    }
+    45% {
+        border-width: 38px;
+        left: -36px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent $yellow-clr $yellow-clr transparent; 
+    }
+    50% {
+        border-width: 30px;
+        left: -25px;
+        top: -30px;
+        border-radius: 15%;
+        border-color: transparent $yellow-clr $yellow-clr transparent; 
+    }
+    95% {
+        border-width: 30px;
+        left: -25px;
+        top: -30px;
+        border-radius: 15%;
+        border-color: transparent $yellow-clr $yellow-clr transparent; 
+    }
+    100% {
+        border-width: 38px;
+        left: -36px;
+        top: -40px;
+        border-radius: 50%;
+        border-color: transparent $yellow-clr $yellow-clr transparent; 
+    }
+}
+
+@keyframes eye-right-after {
+    0% {
+        border-color: transparent $red-clr $red-clr transparent;
+    }
+    45% {
+        border-color: transparent $red-clr $red-clr transparent;
+    }
+    50% {
+        border-color: transparent transparent transparent transparent;
+    }
+    95% {
+        border-color: transparent transparent transparent transparent;
+    }
+    100% {
+        border-color: transparent $red-clr $red-clr transparent;
+    }
+}
+
+@keyframes mouth {
+    0% {
+        height: 25%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            21.25% 26.02%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            38.71% 51.45%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            63.39% 40.63%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            72.2% 27.62%,
+            67% 0%,
+            50% 0%,
+            32.38% 26.02%,
+            14.75% 5%
+        );
+    }
+    45% {
+        height: 25%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            21.25% 26.02%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            38.71% 51.45%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            63.39% 40.63%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            72.2% 27.62%,
+            67% 0%,
+            50% 0%,
+            32.38% 26.02%,
+            14.75% 5%
+        );
+    }
+    50% {
+        height: 30%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            9% 65%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            40.23% 98.6%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            77.43% 89.39%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            83.5% 0%,
+            67% 0%,
+            50% 0%,
+            31.88% 0%,
+            14.75% 0%
+        );
+    }
+    95% {
+        height: 30%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            9% 65%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            40.23% 98.6%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            77.43% 89.39%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            83.5% 0%,
+            67% 0%,
+            50% 0%,
+            31.88% 0%,
+            14.75% 0%
+        );
+    }
+    100% {
+        height: 25%;
+        clip-path: polygon(
+            0% 0%,
+            0% 13.51%,
+            1.23% 29.4%,
+            2.89% 39.94%,
+            5% 53.33%,
+            21.25% 26.02%,
+            14.75% 77.88%,
+            22.9% 89.39%,
+            31.06% 94.95%,
+            38.71% 51.45%,
+            50% 100%,
+            58.56% 98.6%,
+            68.46% 94.95%,
+            63.39% 40.63%,
+            84.62% 81.66%,
+            90.91% 68.02%,
+            94.4% 55.25%,
+            96.54% 41.76%,
+            98.68% 28.28%,
+            100% 12.75%,
+            100% 0.25%,
+            72.2% 27.62%,
+            67% 0%,
+            50% 0%,
+            32.38% 26.02%,
+            14.75% 5%
+        );
+    }
+}

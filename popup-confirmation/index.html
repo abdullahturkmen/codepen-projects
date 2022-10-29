@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="tr">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Popup Confirmation</title>
+		<link rel="stylesheet" href="./assets/css/style.css">
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous">
+	</head>
+	<body>
+
+		<!-- Button trigger modal -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal"
+			data-bs-target="#generalModal">
+			Open Modal
+		</button>
+
+
+
+
+		<!-- General Modal -->
+		<div class="modal fade" id="generalModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+
+
+						<div class="row">
+							<div class="col px-4">
+
+								<h6 class="general-modal-title">Terms and Conditions</h6>
+
+								<p class="general-modal-subtitle my-4">Lorem ipsum dolor sit amet,
+									consectetur adipiscing elit ut aliquam.</p>
+
+								<div class="modal-checkbox">
+									<div class="modal-checkbox-item"><input class="" tabindex="3"
+											id="firstCheckbox" name="first" type="checkbox"
+											onclick="checkLoginBtn()" data-bs-toggle="modal"
+											data-bs-target="#firstModal"> <a data-bs-toggle="modal"
+											data-bs-target="#firstModal">I have read</a>, I agree</div>
+									<div class="modal-checkbox-item"><input class="" tabindex="3"
+											id="secondCheckbox" name="second" type="checkbox"
+											onclick="checkLoginBtn()" data-bs-toggle="modal"
+											data-bs-target="#secondModal"> <a data-bs-toggle="modal"
+											data-bs-target="#secondModal">I have read</a>, I agree</div>
+									<div class="modal-checkbox-item"><input class="" tabindex="3"
+											id="thirdCheckbox" name="third" type="checkbox"
+											onclick="checkLoginBtn()" data-bs-toggle="modal"
+											data-bs-target="#thirdModal"> <a data-bs-toggle="modal"
+											data-bs-target="#thirdModal">I have read</a>, I agree</div>
+								</div>
+
+
+								<div class="px-5 mt-4">
+									<input id="close-general-modal" class="btn general-modal-confirm-btn
+										w-100
+										" type="button" onclick="" value="I agree" data-bs-dismiss="modal"
+										disabled="">
+
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<!-- First Modal -->
+		<div class="modal fade" id="firstModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">First Modal Title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+
+
+						<div class="row">
+							<div class="col px-4">
+
+
+
+								<div class="modal-information">
+									<div class="modal-information-text">
+										<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+											metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat
+											numune kitabı oluşturmak üzere bir yazı galerisini alarak
+											karıştırdığı 1500'lerden beri endüstri standardı sahte metinler
+											olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle
+											kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de
+											sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset
+											yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi
+											Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile
+											popüler olmuştur.</p>
+										<p>1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri
+											ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan
+											1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan
+											İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir.</p>
+										<p>Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz.
+											Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar
+											uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney
+											College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum
+											pasajında geçen ve anlaşılması en güç sözcüklerden biri olan
+											'consectetur' sözcüğünün klasik edebiyattaki örneklerini
+											incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero
+											tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et
+											Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33
+											sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir
+											tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum
+											pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı
+											bölümdeki bir satırdan gelmektedir.</p></div>
+								</div>
+
+
+
+
+								<div class="px-5 mt-4">
+									<input class="btn modal-confirm-btn w-100
+										" type="button" onclick="checkboxChecked('#firstCheckbox')"
+										value="I agree" data-bs-dismiss="modal" disabled="">
+									<input type="hidden" class="modal-reading-val" id="checkInputFirst">
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Second Modal -->
+		<div class="modal fade" id="secondModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Second Modal Title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+
+
+						<div class="row">
+							<div class="col px-4">
+
+
+
+								<div class="modal-information">
+									<div class="modal-information-text">
+										<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+											metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat
+											numune kitabı oluşturmak üzere bir yazı galerisini alarak
+											karıştırdığı 1500'lerden beri endüstri standardı sahte metinler
+											olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle
+											kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de
+											sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset
+											yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi
+											Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile
+											popüler olmuştur.</p>
+										<p>1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri
+											ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan
+											1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan
+											İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir.</p>
+										<p>Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz.
+											Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar
+											uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney
+											College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum
+											pasajında geçen ve anlaşılması en güç sözcüklerden biri olan
+											'consectetur' sözcüğünün klasik edebiyattaki örneklerini
+											incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero
+											tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et
+											Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33
+											sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir
+											tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum
+											pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı
+											bölümdeki bir satırdan gelmektedir.</p></div>
+								</div>
+
+
+
+
+								<div class="px-5 mt-4">
+									<input class="btn modal-confirm-btn w-100
+										" type="button" onclick="checkboxChecked('#secondCheckbox')"
+										value="I agree" data-bs-dismiss="modal" disabled="">
+									<input type="hidden" class="modal-reading-val" id="checkInputSecond">
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<!-- Third Modal -->
+		<div class="modal fade" id="thirdModal" tabindex="-1"
+			aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Third Modal Title</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal"
+							aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+
+
+						<div class="row">
+							<div class="col px-4">
+
+
+
+								<div class="modal-information">
+									<div class="modal-information-text">
+										<p>Lorem Ipsum, dizgi ve baskı endüstrisinde kullanılan mıgır
+											metinlerdir. Lorem Ipsum, adı bilinmeyen bir matbaacının bir hurufat
+											numune kitabı oluşturmak üzere bir yazı galerisini alarak
+											karıştırdığı 1500'lerden beri endüstri standardı sahte metinler
+											olarak kullanılmıştır. Beşyüz yıl boyunca varlığını sürdürmekle
+											kalmamış, aynı zamanda pek değişmeden elektronik dizgiye de
+											sıçramıştır. 1960'larda Lorem Ipsum pasajları da içeren Letraset
+											yapraklarının yayınlanması ile ve yakın zamanda Aldus PageMaker gibi
+											Lorem Ipsum sürümleri içeren masaüstü yayıncılık yazılımları ile
+											popüler olmuştur.</p>
+										<p>1500'lerden beri kullanılmakta olan standard Lorem Ipsum metinleri
+											ilgilenenler için yeniden üretilmiştir. Çiçero tarafından yazılan
+											1.10.32 ve 1.10.33 bölümleri de 1914 H. Rackham çevirisinden alınan
+											İngilizce sürümleri eşliğinde özgün biçiminden yeniden üretilmiştir.</p>
+										<p>Yaygın inancın tersine, Lorem Ipsum rastgele sözcüklerden oluşmaz.
+											Kökleri M.Ö. 45 tarihinden bu yana klasik Latin edebiyatına kadar
+											uzanan 2000 yıllık bir geçmişi vardır. Virginia'daki Hampden-Sydney
+											College'dan Latince profesörü Richard McClintock, bir Lorem Ipsum
+											pasajında geçen ve anlaşılması en güç sözcüklerden biri olan
+											'consectetur' sözcüğünün klasik edebiyattaki örneklerini
+											incelediğinde kesin bir kaynağa ulaşmıştır. Lorm Ipsum, Çiçero
+											tarafından M.Ö. 45 tarihinde kaleme alınan "de Finibus Bonorum et
+											Malorum" (İyi ve Kötünün Uç Sınırları) eserinin 1.10.32 ve 1.10.33
+											sayılı bölümlerinden gelmektedir. Bu kitap, ahlak kuramı üzerine bir
+											tezdir ve Rönesans döneminde çok popüler olmuştur. Lorem Ipsum
+											pasajının ilk satırı olan "Lorem ipsum dolor sit amet" 1.10.32 sayılı
+											bölümdeki bir satırdan gelmektedir.</p></div>
+								</div>
+
+
+
+
+								<div class="px-5 mt-4">
+									<input class="btn modal-confirm-btn w-100
+										" type="button" onclick="checkboxChecked('#thirdCheckbox')"
+										value="I agree" data-bs-dismiss="modal" disabled="">
+									<input type="hidden" class="modal-reading-val" id="checkInputThird">
+								</div>
+
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<script src="./assets/js/app.js"></script>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"></script>
+
+
+
+	</body>
+</html>

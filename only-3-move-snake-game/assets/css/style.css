@@ -13,4 +13,14 @@ body {
 
 canvas {
   background-color: darkcyan;
+}
+
+.start-btn {
+  position: absolute;
+  background-color: #006e0b;
+  color: #fff;
+  border: 0;
+  font-size: 20px;
+  padding: 5px 10px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */

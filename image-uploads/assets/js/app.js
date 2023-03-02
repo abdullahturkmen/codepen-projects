@@ -1,7 +1,7 @@
 var fileUploader = document.querySelector(".file-uploader");
 var fileViewer = document.querySelector(".file-viewer");
 
-const readFile = () => {
+function readFile()  {
 
     if (!this.files || !this.files[0]) {
         return;

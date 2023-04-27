@@ -8,14 +8,16 @@ const swiper = new Swiper('.swiper', {
   pagination: {
     el: '.swiper-pagination',
   },
-  freeMode: true,
+  freeMode: false,
 
   breakpoints: {
     768: {
       slidesPerView: 3,
+      freeMode: true,
     },
     1024: {
       slidesPerView: 5,
+      freeMode: true,
     },
   },
 

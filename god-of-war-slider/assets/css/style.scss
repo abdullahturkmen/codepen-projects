@@ -8,6 +8,7 @@
   margin: 0;
   margin: 0;
   -webkit-tap-highlight-color: transparent;
+  user-select: none;
 }
 
 body {
@@ -27,6 +28,10 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   min-height: 100vh;
+  position: absolute;
+  z-index: -1;
+  animation: splash 1.2s ease-in-out;
+  opacity: 0;
 
   img {
     max-width: 80%;
@@ -34,6 +39,8 @@ body {
 }
 
 .swiper {
+  animation: swiper 2s ease-in-out;
+  opacity: 1;
   &-slide {
     opacity: 0.3;
     transition: all 0.1s linear;
@@ -90,25 +97,25 @@ body {
 
       @media screen and (max-width: 767px) {
         font-size: 2em;
+        width: 92% !important;
+        height: 96vh !important;
+        margin: 2% 4%;
       }
 
       img {
         transform: scale(2);
         @media screen and (max-width: 767px) {
-          padding: 8px;
-          transform: scale(1);
+          transform: scale(1.2);
         }
       }
       span {
         display: block;
       }
 
-      &:hover {
-        img {
-          transform: scale(2.4);
-
-          @media screen and (max-width: 767px) {
-            transform: scale(1);
+      @media screen and (min-width: 768px) {
+        &:hover {
+          img {
+            transform: scale(2.4);
           }
         }
       }
@@ -149,5 +156,26 @@ body {
         background-image: url(./../img/slider-arrow-hover.svg);
       }
     }
+  }
+}
+
+
+@keyframes splash {
+  from{
+    opacity: 1;
+    z-index: 9;
+  }
+  to{
+    opacity: 0;
+    z-index: -1;
+  }
+}
+
+@keyframes swiper {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
   }
 }
